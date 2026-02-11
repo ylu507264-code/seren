@@ -1,5 +1,187 @@
 <!DOCTYPE html>
+<html lang="zh-CN"><!DOCTYPE html>
 <html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>77lu | Serendipity</title>
+    <style>
+        :root {
+            --main-bg: #0a0a0a;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --accent: #a29bfe;
+            --text-p: #e0e0e0;
+            --text-s: #888;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--main-bg);
+            color: var(--text-p);
+            font-family: "Inter", -apple-system, "Noto Serif SC", serif;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* 背景流光效果 */
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% -20%, #2d2a4a 0%, #0a0a0a 80%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            padding: 100px 24px;
+        }
+
+        /* 头部高级排版 */
+        header {
+            margin-bottom: 80px;
+            text-align: left;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: -1px;
+            color: #fff;
+        }
+
+        .status-dot {
+            width: 8px; height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--accent);
+            animation: pulse 2s infinite;
+        }
+
+        .intro {
+            font-size: 16px;
+            color: var(--text-s);
+            max-width: 450px;
+            line-height: 1.6;
+        }
+
+        /* 动态列表 - 高级感核心 */
+        .feed {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 32px;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .card-body {
+            font-size: 15px;
+            color: var(--text-p);
+            line-height: 1.8;
+            opacity: 0.8;
+        }
+
+        footer {
+            margin-top: 100px;
+            text-align: center;
+            font-size: 12px;
+            color: #444;
+            letter-spacing: 2px;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 60px 20px; }
+            .card { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<div class="container">
+    <header>
+        <div class="logo-area">
+            <div class="logo">77lu</div>
+            <div class="status-dot"></div>
+        </div>
+        <p class="intro">
+            创作者 / 编剧。这里记录着那些不期而遇的灵感碎片，以及关于“咸鱼哲学”的深度思考。
+        </p >
+    </header>
+
+    <main class="feed">
+        <article class="card">
+            <span class="card-meta">2026.02.11 / Thoughts</span>
+            <h2 class="card-title">Serendipity 的本质</h2>
+            <p class="card-body">
+                所谓不期而遇，并不是等待幸运降临，而是当你足够热爱生活时，生活给你的那些“彩蛋”。网站今天正式进入深色模式。
+            </p >
+        </article>
+
+        <article class="card">
+            <span class="card-meta">2026.02.05 / Archive</span>
+            <h2 class="card-title">咸鱼翻身实验</h2>
+            <p class="card-body">
+                在剧本第15集里，我让主角在最绝望的时候学会了彻底“躺平”，结果反而赢了。有时候，对抗重力的最好方式是顺应它。
+            </p >
+        </article>
+    </main>
+
+    <footer>
+        &copy; 77LU SERENDIPITY SPACE
+    </footer>
+</div>
+
+</body>
+</html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -135,3 +317,4 @@
 
 </body>
 </html>
+
