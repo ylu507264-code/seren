@@ -9,34 +9,22 @@
         :root { --bg: #0a0c10; --accent: #d4af37; --text: #e6edf3; }
         body { background: var(--bg); color: var(--text); font-family: sans-serif; display: flex; justify-content: center; min-height: 100vh; margin: 0; }
         .container { max-width: 500px; width: 100%; padding: 60px 20px; text-align: center; }
-        /* 头像容器 */
-        .avatar-container {
-            width: 100px; height: 100px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            border: 2px solid var(--accent);
-            padding: 5px;
-            overflow: hidden;
-        }
-        .avatar-container img { width: 100%; height: 100%; border-radius: 50%; display: block; }
-        h1 { font-size: 28px; letter-spacing: 2px; margin-bottom: 10px; }
-        .tagline { color: var(--accent); font-size: 12px; font-weight: bold; letter-spacing: 2px; margin-bottom: 30px; }
-        .bio-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 25px; text-align: left; line-height: 1.8; margin-bottom: 30px; }
+        .avatar-container { width: 110px; height: 110px; margin: 0 auto 25px; border-radius: 50%; border: 2px solid var(--accent); padding: 5px; box-shadow: 0 0 15px rgba(212,175,55,0.2); overflow: hidden; }
+        .avatar-container img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+        h1 { font-size: 30px; letter-spacing: 2px; margin-bottom: 10px; }
+        .tagline { color: var(--accent); font-size: 12px; font-weight: bold; letter-spacing: 3px; margin-bottom: 35px; }
+        .bio-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 25px; text-align: left; line-height: 1.8; margin-bottom: 35px; }
         .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-        .social-item { background: rgba(255,255,255,0.03); padding: 20px 10px; border-radius: 15px; text-decoration: none; color: var(--text); transition: 0.3s; cursor: pointer; border: 1px solid transparent; }
-        .social-item:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .social-item i { font-size: 24px; color: var(--accent); margin-bottom: 8px; display: block; }
-        .social-item span { font-size: 11px; opacity: 0.7; }
-        /* 弹窗 */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); z-index: 100; justify-content: center; align-items: center; }
-        .modal-content { background: #1c1f26; padding: 30px; border-radius: 25px; border: 1px solid var(--accent); text-align: center; width: 80%; max-width: 300px; }
+        .social-item { background: rgba(255,255,255,0.03); padding: 22px 10px; border-radius: 18px; text-decoration: none; color: var(--text); border: 1px solid transparent; }
+        .social-item i { font-size: 26px; color: var(--accent); margin-bottom: 10px; display: block; }
+        .social-item span { font-size: 11px; opacity: 0.8; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="avatar-container">
-        < img src="微信图片_2026-01-10_202809_006.png" alt="Avatar">
+        < img src="me.png" alt="Avatar">
     </div>
     
     <h1>77lu</h1>
@@ -49,30 +37,13 @@
     </div>
 
     <div class="social-grid">
-        <a href=" " class="social-item"><i class="fab fa-tiktok"></i><span>TikTok</span></a >
-        <a href="#" class="social-item"><i class="fab fa-twitter"></i><span>Twitter</span></a >
-        <a href="#" class="social-item"><i class="fab fa-instagram"></i><span>Instagram</span></a >
-        <div class="social-item" onclick="showModal('WeChat', '你的微信号')"><i class="fab fa-weixin"></i><span>WeChat</span></div>
-        <div class="social-item" onclick="showModal('QQ', '你的QQ号')"><i class="fab fa-qq"></i><span>QQ</span></div>
+        <div class="social-item"><i class="fab fa-tiktok"></i><span>TikTok</span></div>
+        <div class="social-item"><i class="fab fa-twitter"></i><span>Twitter</span></div>
+        <div class="social-item"><i class="fab fa-instagram"></i><span>Instagram</span></div>
+        <div class="social-item"><i class="fab fa-weixin"></i><span>WeChat</span></div>
+        <div class="social-item"><i class="fab fa-qq"></i><span>QQ</span></div>
     </div>
 </div>
-
-<div id="contactModal" class="modal" onclick="this.style.display='none'">
-    <div class="modal-content" onclick="event.stopPropagation()">
-        <h3 id="mTitle" style="color:var(--accent); margin-bottom:15px;"></h3>
-        <p id="mID" style="font-family:monospace; margin-bottom:20px;"></p >
-        <div style="color:var(--accent); cursor:pointer; font-size:12px;" onclick="document.getElementById('contactModal').style.display='none'">[ 关闭 ]</div>
-    </div>
-</div>
-
-<script>
-    function showModal(name, id) {
-        document.getElementById('contactModal').style.display = 'flex';
-        document.getElementById('mTitle').innerText = name;
-        document.getElementById('mID').innerText = 'ID: ' + id;
-    }
-</script>
 
 </body>
 </html>
-
