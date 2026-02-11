@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>77lu | Serendipity</title>
+    <style>
+        /* 1. 基础美化 */
+        :root {
+            --bg: #fdfdfc;
+            --text: #333333;
+            --accent: #8e8cd8; /* 柔和的紫色 */
+            --border: #eeeeee;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: "Source Sans Pro", -apple-system, "Noto Serif SC", serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* 2. 居中容器 */
+        .wrapper {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 80px 25px;
+        }
+        /* 3. 头部设计 */
+        header {
+            margin-bottom: 100px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .bio {
+            color: #888;
+            font-size: 14px;
+            max-width: 400px;
+        }
+        /* 4. 日常列表样式 */
+        .timeline {
+            border-left: 1px solid var(--border);
+            padding-left: 30px;
+            margin-left: 10px;
+        }
+        .entry {
+            position: relative;
+            margin-bottom: 60px;
+        }
+        /* 时间轴圆点 */
+        .entry::before {
+            content: "";
+            position: absolute;
+            left: -35.5px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            background: var(--bg);
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+        }
+        .date {
+            font-family: "Georgia", serif;
+            font-size: 12px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .content {
+            font-size: 16px;
+            color: #444;
+            text-align: justify;
+        }
+        /* 5. 底部 */
+        footer {
+            margin-top: 100px;
+            font-size: 11px;
+            color: #bbb;
+            letter-spacing: 1px;
+        }
+        /* 手机端优化 */
+        @media (max-width: 480px) {
+            .wrapper { padding: 40px 20px; }
+            header { margin-bottom: 60px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <header>
+        <div class="logo">77lu</div>
+        <div class="bio">
+            一个记录日常、剧本碎片与不期而遇的地方。<br>
+            Serendipity is the art of making happy discoveries.
+        </div>
+    </header>
+
+    <main class="timeline">
+        <article class="entry">
+            <span class="date">2026 / 02 / 11</span>
+            <div class="content">
+                网站今天正式运行了。相比起复杂的展示空间，我更喜欢这样一个能安静说话的角落。
+            </div>
+        </article>
+
+        <article class="entry">
+            <span class="date">2026 / 02 / 05</span>
+            <div class="content">
+                有时候，生活并不需要太多的代码，只需要一点留白。
+            </div>
+        </article>
+
+        <article class="entry">
+            <span class="date">2026 / 01 / 30</span>
+            <div class="content">
+                关于《顶级咸鱼》的构思：咸鱼的翻身，有时候不是为了逆袭，只是为了晒得更均匀一点。
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        PUBLISHED BY 77LU · POWERED BY SERENDIPITY
+    </footer>
+</div>
+
+</body>
+</html>
